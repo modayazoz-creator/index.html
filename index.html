@@ -1,864 +1,6 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"><!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ريادة الأمن الذكي والتقنيات المتقدمة | مؤسسة بلاي فيلم للتجارة</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 400px;
-            max-height: 50vh;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .nav-link {
-            transition: all 0.3s ease;
-        }
-        /* اللون الأساسي الأزرق: #2563eb. لتغيير اللون الأساسي، غيّر الكود التالي: */
-        .nav-link.active { 
-            color: #2563eb; 
-            border-bottom-color: #2563eb;
-        }
-        .solution-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-         .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        #chat-window {
-            height: 300px;
-            overflow-y: auto;
-        }
-        .chat-message {
-            max-width: 80%;
-            border-radius: 1rem;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.5rem;
-            word-wrap: break-word;
-        }
-        .user-message {
-            background-color: #2563eb;
-            color: white;
-            margin-right: auto;
-        }
-        .assistant-message {
-            background-color: #e5e7eb;
-            color: #374151;
-            margin-left: auto;
-        }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="flex items-center space-x-2 space-x-reverse">
-                <img src="logo/playfilm_logo.png" alt="شعار مؤسسة بلاي فيلم للتجارة" class="h-8 md:h-10">
-                <h1 class="text-xl md:text-2xl font-bold text-blue-600">مؤسسة بلاي فيلم للتجارة</h1>
-            </a>
-            <div class="hidden md:flex space-i-8">
-                <a href="#hero" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">الرئيسية</a>
-                <a href="#solutions" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">حلولنا</a>
-                <a href="#visuals" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">حلولنا بالصور</a>
-                <a href="#portfolio" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">محفظة الحلول</a>
-                <a href="#commitment" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">التزامنا</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">مقترحات المشاريع ✨</a>
-                <a href="#assistant" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">المساعد الافتراضي ✨</a>
-                <a href="#image-analysis" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">تحليل الصور الأمنية ✨</a>
-                <a href="#marketing-content" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">إنشاء محتوى تسويقي ✨</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">تواصل معنا</a>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container mx-auto px-6 py-12">
-        <section id="hero" class="text-center py-16">
-            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900">ريادة الأمن الذكي والتقنيات المتقدمة</h2>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-6">شريككم الاستراتيجي لتصميم ونشر حلول مبتكرة تتوافق مع رؤية المملكة 2030، لرفع مستويات السلامة والكفاءة التشغيلية.</p>
-            <a href="#solutions" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">اكتشف حلولنا</a>
-        </section>
-
-        <section id="solutions" class="py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">محفظة شاملة من الحلول الذكية</h3>
-                <p class="text-md text-gray-600 mt-2">انقر على أي فئة لاستكشاف كيف يمكننا تأمين وتحديث بيئتك.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 text-center">
-                <button data-solution="monitoring" class="solution-card p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-4xl">📹</span>
-                    <h4 class="font-bold mt-2">المراقبة المتقدمة</h4>
-                </button>
-                <button data-solution="access" class="solution-card p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-4xl">🔑</span>
-                    <h4 class="font-bold mt-2">التحكم بالوصول</h4>
-                </button>
-                <button data-solution="communication" class="solution-card p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-4xl">📡</span>
-                    <h4 class="font-bold mt-2">الاتصالات والصوتيات</h4>
-                </button>
-                <button data-solution="smart" class="solution-card p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-4xl">🏢</span>
-                    <h4 class="font-bold mt-2">المباني الذكية</h4>
-                </button>
-                <button data-solution="energy" class="solution-card p-6 bg-white rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-4xl">☀️</span>
-                    <h4 class="font-bold mt-2">حلول الطاقة</h4>
-                </button>
-            </div>
-
-            <div id="solution-details" class="bg-white p-8 rounded-lg shadow-md min-h-[20rem] flex flex-col items-center justify-center">
-                <p class="text-gray-500 text-lg">اختر فئة من الأعلى لعرض التفاصيل.</p>
-                <button id="summarize-btn" class="hidden mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition-colors">تلخيص المحتوى ✨</button>
-                <div id="summary-loader" class="hidden mt-4 loader"></div>
-                <div id="summary-output" class="hidden mt-4 bg-gray-100 p-4 rounded-lg w-full text-right"></div>
-            </div>
-        </section>
-
-        <section id="visuals" class="py-16 bg-gray-100">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">حلولنا بالصور والفيديو</h3>
-                <p class="text-md text-gray-600 mt-2">لمحة مرئية عن الخدمات التي نقدمها. (الرجاء تغيير مسارات الصور في الكود أدناه)</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/smart_monitoring.jpg" alt="Smart Monitoring System" title="أنظمة المراقبة المتقدمة المدعومة بالذكاء الاصطناعي" class="rounded-lg shadow-md mb-4 w-full h-auto">
-                    <h4 class="text-xl font-bold my-2 text-blue-700">المراقبة المتقدمة</h4>
-                    <p class="text-gray-600">نقدم حلول مراقبة شاملة باستخدام أحدث التقنيات مثل كاميرات 4K/8K وتحليلات الفيديو المدعومة بالذكاء الاصطناعي.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/access_control.jpg" alt="Access Control System" title="أنظمة التحكم الذكي بالدخول وإدارة الوقت" class="rounded-lg shadow-md mb-4 w-full h-auto">
-                    <h4 class="text-xl font-bold my-2 text-blue-700">التحكم بالوصول</h4>
-                    <p class="text-gray-600">تأمين المداخل والمخارج عبر أنظمة بيومترية، قارئات البطاقات، وبوابات إلكترونية لضمان التحكم الكامل في الدخول.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/communication_solution.jpg" alt="Communication Solutions" title="حلول الاتصالات الحديثة والصوتيات الاحترافية" class="rounded-lg shadow-md mb-4 w-full h-auto">
-                    <h4 class="text-xl font-bold my-2 text-blue-700">الاتصالات والصوتيات</h4>
-                    <p class="text-gray-600">نوفر أنظمة سنترال VoIP وأنظمة صوت عالية الجودة للمساجد، قاعات الاجتماعات، والمرافق العامة.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/smart_building.jpg" alt="Smart Building Tech" title="تقنيات المباني والبنية التحتية الذكية" class="rounded-lg shadow-md mb-4 w-full h-auto">
-                    <h4 class="text-xl font-bold my-2 text-blue-700">المباني الذكية</h4>
-                    <p class="text-gray-600">نحول المباني إلى مساحات ذكية عبر أنظمة تحكم متكاملة بالإضاءة، التكييف، والأجهزة لتوفير الطاقة والراحة.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/renewable_energy.jpg" alt="Renewable Energy" title="حلول الطاقة المتجددة والمتخصصة" class="rounded-lg shadow-md mb-4 w-full h-auto">
-                    <h4 class="text-xl font-bold my-2 text-blue-700">حلول الطاقة</h4>
-                    <p class="text-gray-600">تماشيًا مع رؤية 2030، نقدم ألواح طاقة شمسية ومولدات طاقة لضمان استمرارية التشغيل وتقليل التكاليف.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="images/intro_video_cover.jpg" alt="Service Explanation Video" title="فيديو تعريفي بخدماتنا المتكاملة" class="rounded-lg shadow-md mb-4 w-full h-auto">
-                    <h4 class="text-xl font-bold my-2 text-blue-700">فيديو تعريفي</h4>
-                    <p class="text-gray-600">نقدم عرضًا مرئيًا تفاعليًا يوضح كيف تعمل حلولنا معًا لإنشاء بيئة آمنة وذكية. </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">نظرة تفاعلية على محفظة حلولنا</h3>
-                <p class="text-md text-gray-600 mt-2">انقر على أي شريط في المخطط أدناه لعرض تفاصيل الفئة وكيف تخدم قطاعات متنوعة.</p>
-            </div>
-            <div class="chart-container">
-                <canvas id="solutionsChart"></canvas>
-            </div>
-             <div id="chart-details" class="mt-8 text-center bg-gray-100 p-6 rounded-lg hidden">
-                <h4 id="chart-detail-title" class="text-xl font-bold text-blue-700"></h4>
-                <p id="chart-detail-content" class="text-gray-700 mt-2"></p>
-            </div>
-        </section>
-
-        <section id="commitment" class="py-16">
-             <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">التزامنا بالتميز</h3>
-                <p class="text-md text-gray-600 mt-2">الجودة، الخبرة، والتركيز على العميل هي حجر الزاوية في عملياتنا.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-5xl">🏆</span>
-                    <h4 class="text-xl font-bold my-3">جودة لا تضاهى</h4>
-                    <p class="text-gray-600">نلتزم بتقديم منتجات عالية الجودة ومرخصة تلتزم بأشد المعايير الدولية.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-5xl">🛠️</span>
-                    <h4 class="text-xl font-bold my-3">تركيب احترافي</h4>
-                    <p class="text-gray-600">فرق من المهندسين والفنيين الخبراء لضمان التنفيذ الدقيق والأداء الأمثل.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-5xl">🤝</span>
-                    <h4 class="text-xl font-bold my-3">حلول مخصصة</h4>
-                    <p class="text-gray-600">تصميم وتنفيذ أنظمة تتوافق تمامًا مع المتطلبات التشغيلية الفريدة لكل عميل.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-                    <span class="text-5xl">🕒</span>
-                    <h4 class="text-xl font-bold my-3">دعم فني مستمر</h4>
-                    <p class="text-gray-600">صيانة استباقية ودعم فني سريع الاستجابة لضمان التشغيل المتواصل.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="projects" class="py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">احصل على اقتراح مشروع مخصص ✨</h3>
-                <p class="text-md text-gray-600 mt-2">اختر نوع المبنى ونوع الخدمة للحصول على اقتراح مشروع فريد.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
-                <div class="flex flex-col md:flex-row gap-4 mb-4">
-                    <select id="building-type" class="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="منزل">منزل</option>
-                        <option value="مكتب">مكتب</option>
-                        <option value="مصنع">مصنع</option>
-                        <option value="مستودع">مستودع</option>
-                        <option value="مبنى حكومي">مبنى حكومي</option>
-                    </select>
-                    <select id="service-type" class="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="نظام مراقبة">نظام مراقبة</option>
-                        <option value="نظام تحكم بالدخول">نظام تحكم بالدخول</option>
-                        <option value="شبكة اتصالات">شبكة اتصالات</option>
-                        <option value="نظام مبنى ذكي">نظام مبنى ذكي</option>
-                    </select>
-                </div>
-                <button id="generate-project-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">توليد مقترح المشروع</button>
-                <div id="project-loader" class="hidden mt-4 loader mx-auto"></div>
-                <div id="project-output" class="mt-8 p-6 bg-gray-100 rounded-lg text-right hidden">
-                    <button id="tts-btn" class="bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">استمع إلى المقترح ✨</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="assistant" class="py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">مساعد بلاي فيلم الافتراضي ✨</h3>
-                <p class="text-md text-gray-600 mt-2">اسأل أي سؤال عن حلولنا وسيقوم مساعدنا الذكي بالإجابة.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto flex flex-col h-[500px]">
-                <div id="chat-window" class="flex-1 mb-4 p-4 border rounded-lg flex flex-col">
-                </div>
-                <div class="flex">
-                    <input id="chat-input" type="text" placeholder="اكتب سؤالك هنا..." class="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <button id="chat-send-btn" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors mr-2">إرسال</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="image-analysis" class="py-16 bg-gray-100">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">تحليل الصور الأمنية ✨</h3>
-                <p class="text-md text-gray-600 mt-2">قم بتحميل صورة من كاميرا مراقبة للحصول على تقرير أمني مفصل.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto text-center">
-                <input type="file" id="image-input" accept="image/*" class="mb-4 text-gray-700">
-                <button id="analyze-image-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">تحليل الصورة</button>
-                <div id="image-loader" class="hidden mt-4 loader mx-auto"></div>
-                <div id="analysis-output" class="hidden mt-8 p-6 bg-gray-100 rounded-lg text-right"></div>
-            </div>
-        </section>
-
-        <section id="marketing-content" class="py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-900">إنشاء محتوى تسويقي ✨</h3>
-                <p class="text-md text-gray-600 mt-2">اكتب وصفاً موجزاً للخدمة لتوليد محتوى تسويقي احترافي.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
-                <textarea id="marketing-input" class="w-full p-3 border rounded-lg mb-4 h-32 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="وصف الخدمة (مثال: نظام مراقبة للمصانع يستخدم الذكاء الاصطناعي لتتبع خطوط الإنتاج)."></textarea>
-                <select id="content-type" class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="شعار">شعار (Slogan)</option>
-                    <option value="منشور لوسائل التواصل الاجتماعي">منشور لوسائل التواصل الاجتماعي</option>
-                    <option value="مسودة بريد إلكتروني">مسودة بريد إلكتروني</option>
-                </select>
-                <button id="generate-marketing-btn" class="w-full bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">توليد المحتوى</button>
-                <div id="marketing-loader" class="hidden mt-4 loader mx-auto"></div>
-                <div id="marketing-output" class="hidden mt-8 p-6 bg-gray-100 rounded-lg text-right"></div>
-            </div>
-        </section>
-    </main>
-    
-    <footer id="contact" class="bg-gray-800 text-white pt-12 pb-8">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-4">شراكة من أجل غدٍ أكثر ذكاءً وأمانًا</h3>
-            <p class="text-gray-300 max-w-2xl mx-auto mb-8">ندعوكم للتواصل معنا لاكتشاف كيف يمكن لحلولنا المتطورة أن تعالج تحدياتكم الأمنية والتكنولوجية، وتمهد الطريق لمستقبل أكثر كفاءة.</p>
-            <p class="text-lg">📍 مكة المكرمة - حي النسيم | 📞 [أدخل رقم الهاتف] | ✉️ [أدخل البريد الإلكتروني]</p>
-            <div class="mt-8 border-t border-gray-700 pt-6">
-                 <p class="text-gray-400">&copy; 2025 مؤسسة بلاي فيلم للتجارة. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const solutionData = {
-                monitoring: {
-                    title: 'أنظمة المراقبة المتقدمة والأمن المتكامل',
-                    content: `
-                        <ul class="list-disc pr-6 space-y-2 text-right">
-                            <li><strong>تقنيات كاميرات متطورة:</strong> نقدم كاميرات IP و CCTV بدقة 4K و 8K، لضمان وضوح لا مثيل له والتقاط أدق التفاصيل.</li>
-                            <li><strong>تحليلات مدعومة بالذكاء الاصطناعي:</strong> نحول المراقبة إلى نموذج أمني استباقي عبر التعرف على الوجوه، تتبع الحركة، والكشف المبكر عن التهديدات.</li>
-                            <li><strong>رؤية ليلية فائقة:</strong> نضمن مراقبة واضحة وفعالة على مدار الساعة طوال أيام الأسبوع، حتى في الظلام التام.</li>
-                            <li><strong>أنظمة إنذار قوية:</strong> حلول متكاملة ضد السرقة والحرائق لحماية الممتلكات والأرواح بتنبيهات فورية وموثوقة.</li>
-                        </ul>
-                    `
-                },
-                access: {
-                    title: 'التحكم الذكي بالدخول وإدارة الوقت',
-                    content: `
-                         <ul class="list-disc pr-6 space-y-2 text-right">
-                            <li><strong>حلول الوصول الشاملة:</strong> ندير ونؤمن نقاط الدخول والخروج بدقة عبر بوابات إلكترونية، أنظمة بيومترية، وقارئات البطاقات الذكية.</li>
-                            <li><strong>أنظمة حضور وانصراف فعالة:</strong> باستخدام التقنيات البيومترية، نبسط إدارة القوى العاملة ونضمن حفظ سجلات دقيقة لحضور الموظفين.</li>
-                            <li><strong>تكامل سلس:</strong> ندمج بين وظائف الأمن وإدارة الموارد البشرية لتعزيز الكفاءة التشغيلية والأمان في آن واحد.</li>
-                        </ul>
-                    `
-                },
-                communication: {
-                    title: 'حلول الاتصالات الحديثة والصوتيات الاحترافية',
-                    content: `
-                        <ul class="list-disc pr-6 space-y-2 text-right">
-                            <li><strong>أنظمة سنترال VoIP متكاملة:</strong> نوفر أنظمة من علامات تجارية رائدة مثل Faisco و Grandstream لتسهيل الاتصال الداخلي والخارجي.</li>
-                            <li><strong>أنظمة صوتيات احترافية:</strong> نصمم ونركب أنظمة صوت عالية الجودة للمساجد، قاعات الاجتماعات، والمرافق العامة.</li>
-                            <li><strong>تكامل أنظمة التيار الخفيف:</strong> نقدم حلولاً موحدة لتكنولوجيا المباني، مما يسمح بتنفيذ مشاريع أكبر وأكثر تعقيدًا.</li>
-                        </ul>
-                    `
-                },
-                smart: {
-                    title: 'تقنيات المباني والبنية التحتية الذكية',
-                    content: `
-                       <ul class="list-disc pr-6 space-y-2 text-right">
-                            <li><strong>التحكم الشامل:</strong> نمكن العملاء من التحكم الكامل في الإضاءة، تكييف الهواء، والأجهزة المختلفة عبر تطبيق واحد سهل الاستخدام.</li>
-                            <li><strong>كفاءة الطاقة:</strong> تساهم حلولنا في تحسين استهلاك الطاقة بشكل كبير وتوفير راحة لا مثيل لها.</li>
-                            <li><strong>مكونات البنية التحتية:</strong> نوفر حلول شبكات قوية، شاشات LED، أنظمة دريف ثرو، وأنظمة إنتركم موثوقة.</li>
-                        </ul>
-                    `
-                },
-                energy: {
-                    title: 'حلول الطاقة المتجددة والمتخصصة',
-                    content: `
-                        <ul class="list-disc pr-6 space-y-2 text-right">
-                           <li><strong>طاقة مستدامة:</strong> تماشيًا مع المبادرات الوطنية، نقدم ألواح طاقة شمسية عالية الجودة لتنويع مصادر الطاقة.</li>
-                           <li><strong>استمرارية التشغيل:</strong> نوفر مولدات طاقة موثوقة لضمان التشغيل المتواصل للأنظمة الحيوية.</li>
-                           <li><strong>مرونة وخفض تكاليف:</strong> تمكين العملاء من الحصول على مصادر طاقة مستقلة، مما يعزز المرونة ويقلل التكاليف التشغيلية.</li>
-                        </ul>
-                    `
-                }
-            };
-
-            const solutionButtons = document.querySelectorAll('[data-solution]');
-            const detailsContainer = document.getElementById('solution-details');
-            const summarizeBtn = document.getElementById('summarize-btn');
-            const summaryLoader = document.getElementById('summary-loader');
-            const summaryOutput = document.getElementById('summary-output');
-            
-            let selectedSolutionContent = '';
-
-            solutionButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const solutionKey = button.dataset.solution;
-                    const data = solutionData[solutionKey];
-                    selectedSolutionContent = data.content.replace(/<[^>]*>?/gm, '').replace(/\s+/g, ' ').trim();
-                    detailsContainer.innerHTML = `
-                        <div class="fade-in w-full text-right">
-                            <h3 class="text-2xl font-bold mb-4 text-blue-600">${data.title}</h3>
-                            <div class="text-gray-700 leading-relaxed">${data.content}</div>
-                        </div>
-                    `;
-                    summarizeBtn.classList.remove('hidden');
-                    summaryOutput.classList.add('hidden');
-                });
-            });
-
-            summarizeBtn.addEventListener('click', async () => {
-                if (!selectedSolutionContent) return;
-                
-                summarizeBtn.classList.add('hidden');
-                summaryLoader.classList.remove('hidden');
-                summaryOutput.classList.add('hidden');
-
-                const userQuery = `لخص المحتوى التالي في فقرة موجزة: ${selectedSolutionContent}`;
-                const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: userQuery }] }] })
-                    });
-                    
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    
-                    const result = await response.json();
-                    const summaryText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "تعذر توليد الملخص.";
-                    
-                    summaryOutput.innerText = summaryText;
-                    summaryOutput.classList.remove('hidden');
-
-                } catch (error) {
-                    console.error('Error generating summary:', error);
-                    summaryOutput.innerText = "حدث خطأ أثناء توليد الملخص. الرجاء المحاولة مرة أخرى.";
-                    summaryOutput.classList.remove('hidden');
-                } finally {
-                    summaryLoader.classList.add('hidden');
-                    summarizeBtn.classList.remove('hidden');
-                }
-            });
-
-            const chartData = {
-                'المراقبة المتقدمة': 'الحلول/المنتجات: كاميرات 4K/8K، IP & CCTV | الميزات/الفوائد: الكشف الاستباقي عن التهديدات، تفاصيل دقيقة، رؤية ليلية.',
-                'التحكم بالوصول وإدارة الوقت': 'الحلول/المنتجات: أنظمة بيومترية، أنظمة حضور | الميزات/الفوائد: كفاءة تشغيلية، تحكم دقيق، إدارة مبسطة للقوى العاملة.',
-                'الاتصالات والصوتيات': 'الحلول/المنتجات: سنترال VoIP، أنظمة صوت احترافية | الميزات/الفوائد: اتصال سلس، صوت عالي الجودة، ربط الفروع.',
-                'المباني والبنية التحتية الذكية': 'الحلول/المنتجات: تحكم متكامل، حلول شبكات | الميزات/الفوائد: توفير الطاقة، معيشة ذكية، راحة لا مثيل لها.',
-                'الطاقة المتخصصة': 'الحلول/المنتجات: ألواح شمسية، مولدات طاقة | الميزات/الفوائد: الاستدامة، مرونة الطاقة، تقليل التكاليف التشغيلية.'
-            };
-
-            const ctx = document.getElementById('solutionsChart').getContext('2d');
-            const solutionsChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: Object.keys(chartData),
-                    datasets: [{
-                        label: 'محفظة الحلول',
-                        data: [100, 95, 90, 85, 80],
-                        backgroundColor: [
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(37, 99, 235, 0.7)',
-                            'rgba(29, 78, 216, 0.7)',
-                            'rgba(30, 64, 175, 0.7)',
-                            'rgba(30, 58, 138, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(37, 99, 235, 1)',
-                            'rgba(29, 78, 216, 1)',
-                            'rgba(30, 64, 175, 1)',
-                            'rgba(30, 58, 138, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: true,
-                            callbacks: {
-                                label: function(context) {
-                                    return ' انقر لعرض التفاصيل';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                             display: false
-                        },
-                        y: {
-                           ticks: {
-                               font: {
-                                   size: 14,
-                                   family: 'Tajawal'
-                               }
-                           }
-                        }
-                    },
-                    onClick: (event, elements) => {
-                        if (elements.length > 0) {
-                            const index = elements[0].index;
-                            const label = solutionsChart.data.labels[index];
-                            const content = chartData[label];
-                            
-                            document.getElementById('chart-details').classList.remove('hidden');
-                            document.getElementById('chart-detail-title').innerText = label;
-                            document.getElementById('chart-detail-content').innerText = content;
-                            
-                             document.getElementById('chart-details').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }
-                    }
-                }
-            });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            const generateProjectBtn = document.getElementById('generate-project-btn');
-            const projectLoader = document.getElementById('project-loader');
-            const projectOutput = document.getElementById('project-output');
-            const ttsBtn = document.getElementById('tts-btn');
-            let generatedProjectText = "";
-
-            function convertBase64ToArrayBuffer(base64) {
-                const binaryString = atob(base64);
-                const len = binaryString.length;
-                const bytes = new Uint8Array(len);
-                for (let i = 0; i < len; i++) {
-                    bytes[i] = binaryString.charCodeAt(i);
-                }
-                return bytes.buffer;
-            }
-
-            function pcmToWav(pcmData, sampleRate) {
-                const pcm16 = new Int16Array(pcmData);
-                const numSamples = pcm16.length;
-                const buffer = new ArrayBuffer(44 + numSamples * 2);
-                const view = new DataView(buffer);
-                let offset = 0;
-
-                const writeString = (str) => {
-                    for (let i = 0; i < str.length; i++) {
-                        view.setUint8(offset + i, str.charCodeAt(i));
-                    }
-                    offset += str.length;
-                };
-
-                writeString('RIFF');
-                view.setUint32(offset, 36 + numSamples * 2, true); offset += 4;
-                writeString('WAVE');
-                writeString('fmt ');
-                view.setUint32(offset, 16, true); offset += 4;
-                view.setUint16(offset, 1, true); offset += 2;
-                view.setUint16(offset, 1, true); offset += 2;
-                view.setUint32(offset, sampleRate, true); offset += 4;
-                view.setUint32(offset, sampleRate * 2, true); offset += 4;
-                view.setUint16(offset, 2, true); offset += 2;
-                view.setUint16(offset, 16, true); offset += 2;
-                writeString('data');
-                view.setUint32(offset, numSamples * 2, true); offset += 4;
-
-                for (let i = 0; i < numSamples; i++) {
-                    view.setInt16(offset, pcm16[i], true);
-                    offset += 2;
-                }
-
-                return new Blob([view], { type: 'audio/wav' });
-            }
-
-            generateProjectBtn.addEventListener('click', async () => {
-                const buildingType = document.getElementById('building-type').value;
-                const serviceType = document.getElementById('service-type').value;
-                
-                generateProjectBtn.classList.add('hidden');
-                projectLoader.classList.remove('hidden');
-                projectOutput.classList.add('hidden');
-                ttsBtn.classList.add('hidden');
-
-                const prompt = `اكتب مقترح مشروع أمن ذكي لمؤسسة "بلاي فيلم للتجارة". يهدف المشروع إلى تركيب ${serviceType} في ${buildingType}.
-                اذكر في المقترح:
-                1. وصفًا موجزًا للمشروع.
-                2. الحلول والمكونات الرئيسية المقترحة (أجهزة وبرامج).
-                3. الفوائد الرئيسية المتوقعة للعميل.
-                4. أضف قسمًا يوضح التزامنا بالجودة والدعم الفني.
-                تأكد أن النص احترافي ومناسب للغة العربية.`;
-                const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                    });
-                    
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    
-                    const result = await response.json();
-                    generatedProjectText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "تعذر توليد مقترح المشروع.";
-                    
-                    projectOutput.innerHTML = `
-                        <h4 class="text-xl font-bold mb-4 text-blue-700">مقترح مشروع ${serviceType} لـ ${buildingType}</h4>
-                        <div class="prose max-w-none text-gray-800 leading-relaxed">${generatedProjectText.replace(/\n/g, '<br>')}</div>
-                        <button id="tts-btn" class="mt-4 bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">استمع إلى المقترح ✨</button>
-                    `;
-                    projectOutput.classList.remove('hidden');
-                    projectOutput.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                    document.getElementById('tts-btn').addEventListener('click', async () => {
-                        const ttsApiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=';
-                        const ttsPayload = {
-                            contents: [{ parts: [{ text: generatedProjectText }] }],
-                            generationConfig: {
-                                responseModalities: ["AUDIO"],
-                                speechConfig: {
-                                    voiceConfig: {
-                                        prebuiltVoiceConfig: { voiceName: "Rasalgethi" }
-                                    }
-                                }
-                            }
-                        };
-                        try {
-                            const ttsResponse = await fetch(ttsApiUrl, {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify(ttsPayload)
-                            });
-                            const ttsResult = await ttsResponse.json();
-                            const audioData = ttsResult?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-                            const mimeType = ttsResult?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.mimeType;
-                            
-                            if (audioData && mimeType && mimeType.startsWith("audio/")) {
-                                const sampleRate = parseInt(mimeType.match(/rate=(\d+)/)[1], 10);
-                                const pcmData = convertBase64ToArrayBuffer(audioData);
-                                const wavBlob = pcmToWav(pcmData, sampleRate);
-                                const audioUrl = URL.createObjectURL(wavBlob);
-                                const audio = new Audio(audioUrl);
-                                audio.play();
-                            }
-                        } catch (error) {
-                            console.error('Error playing audio:', error);
-                        }
-                    });
-
-                } catch (error) {
-                    console.error('Error generating project proposal:', error);
-                    projectOutput.innerHTML = "حدث خطأ أثناء توليد مقترح المشروع. الرجاء المحاولة مرة أخرى.";
-                    projectOutput.classList.remove('hidden');
-                } finally {
-                    projectLoader.classList.add('hidden');
-                    generateProjectBtn.classList.remove('hidden');
-                }
-            });
-
-            const chatData = {
-                'المراقبة المتقدمة': 'أنظمة المراقبة المتقدمة والأمن المتكامل. نقدم تقنيات كاميرات متطورة بدقة 4K و 8K، بالإضافة إلى تحليلات مدعومة بالذكاء الاصطناعي مثل التعرف على الوجوه والكشف عن الحركة، وأنظمة إنذار قوية للحماية من السرقة والحرائق.',
-                'التحكم بالوصول وإدارة الوقت': 'يتمثل حلنا في التحكم الذكي بالدخول وإدارة الوقت عبر بوابات إلكترونية، أنظمة بيومترية، وقارئات البطاقات الذكية، مما يسهل إدارة القوى العاملة ويوفر سجلات دقيقة للحضور.',
-                'الاتصالات والصوتيات': 'نوفر حلول اتصالات حديثة وصوتيات احترافية، بما في ذلك أنظمة سنترال VoIP وأنظمة صوت عالية الجودة للمرافق المختلفة.',
-                'المباني والبنية التحتية الذكية': 'حلولنا للمباني والبنية التحتية الذكية تمكن من التحكم الكامل في الإضاءة والتكييف والأجهزة، مما يساهم في كفاءة الطاقة ويوفر راحة لا مثيل لها.',
-                'الطاقة المتخصصة': 'تماشيًا مع رؤية 2030، نقدم ألواح طاقة شمسية ومولدات طاقة موثوقة لضمان استمرارية التشغيل وتقليل التكاليف التشغيلية.'
-            };
-
-            const assistantPrompt = `أنت مساعد افتراضي لمؤسسة "بلاي فيلم للتجارة". مهمتك هي الإجابة على أسئلة المستخدمين حول خدمات المؤسسة بناءً على المعلومات المتاحة لديك. إذا لم تكن الإجابة متاحة، اطلب منهم التواصل مع المؤسسة مباشرة. خدماتنا هي: 
-                - المراقبة المتقدمة: ${chatData['المراقبة المتقدمة']}
-                - التحكم بالوصول وإدارة الوقت: ${chatData['التحكم بالوصول وإدارة الوقت']}
-                - الاتصالات والصوتيات: ${chatData['الاتصالات والصوتيات']}
-                - المباني والبنية التحتية الذكية: ${chatData['المباني والبنية التحتية الذكية']}
-                - الطاقة المتخصصة: ${chatData['الطاقة المتخصصة']}
-            اجب بشكل موجز ومحترف باللغة العربية.`;
-            let chatHistory = [{ role: 'system', parts: [{ text: assistantPrompt }] }];
-
-            const chatInput = document.getElementById('chat-input');
-            const chatSendBtn = document.getElementById('chat-send-btn');
-            const chatWindow = document.getElementById('chat-window');
-
-            const addMessage = (text, role) => {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('chat-message');
-                messageDiv.classList.add(role === 'user' ? 'user-message' : 'assistant-message');
-                messageDiv.innerText = text;
-                chatWindow.appendChild(messageDiv);
-                chatWindow.scrollTop = chatWindow.scrollHeight;
-            };
-
-            const handleChat = async () => {
-                const userMessage = chatInput.value.trim();
-                if (!userMessage) return;
-
-                addMessage(userMessage, 'user');
-                chatInput.value = '';
-                chatSendBtn.disabled = true;
-
-                chatHistory.push({ role: 'user', parts: [{ text: userMessage }] });
-
-                const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: chatHistory })
-                    });
-
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    
-                    const result = await response.json();
-                    const assistantText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "عذرًا، لا يمكنني الإجابة على هذا السؤال حاليًا. يرجى المحاولة مرة أخرى لاحقًا.";
-                    
-                    addMessage(assistantText, 'assistant');
-                    chatHistory.push({ role: 'assistant', parts: [{ text: assistantText }] });
-
-                } catch (error) {
-                    console.error('Error with chat:', error);
-                    addMessage("عذرًا، حدث خطأ أثناء الاتصال. يرجى المحاولة مرة أخرى.", 'assistant');
-                } finally {
-                    chatSendBtn.disabled = false;
-                }
-            };
-
-            chatSendBtn.addEventListener('click', handleChat);
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    handleChat();
-                }
-            });
-
-            const imageInput = document.getElementById('image-input');
-            const analyzeImageBtn = document.getElementById('analyze-image-btn');
-            const imageLoader = document.getElementById('image-loader');
-            const analysisOutput = document.getElementById('analysis-output');
-
-            analyzeImageBtn.addEventListener('click', async () => {
-                const file = imageInput.files[0];
-                if (!file) {
-                    analysisOutput.innerHTML = "الرجاء اختيار صورة للتحليل.";
-                    analysisOutput.classList.remove('hidden');
-                    return;
-                }
-
-                analyzeImageBtn.classList.add('hidden');
-                imageLoader.classList.remove('hidden');
-                analysisOutput.classList.add('hidden');
-
-                const reader = new FileReader();
-                reader.onload = async (e) => {
-                    const base64Data = e.target.result.split(',')[1];
-                    const prompt = `أنت خبير أمن تقني. حلل هذه الصورة من كاميرا مراقبة. صف الأشياء والأشخاص الموجودين في الصورة، وحدد أي أنشطة أو مخاطر أمنية محتملة. أضف توصيات لتعزيز الأمان. اكتب التقرير باللغة العربية.`;
-                    const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
-
-                    try {
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({
-                                contents: [{
-                                    parts: [
-                                        { text: prompt },
-                                        { inlineData: { mimeType: file.type, data: base64Data } }
-                                    ]
-                                }]
-                            })
-                        });
-
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                        
-                        const result = await response.json();
-                        const analysisText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "تعذر تحليل الصورة.";
-                        
-                        analysisOutput.innerHTML = `<h4 class="text-xl font-bold mb-2">تقرير التحليل الأمني:</h4><p class="text-gray-700 leading-relaxed">${analysisText.replace(/\n/g, '<br>')}</p>`;
-                        analysisOutput.classList.remove('hidden');
-
-                    } catch (error) {
-                        console.error('Error analyzing image:', error);
-                        analysisOutput.innerHTML = "حدث خطأ أثناء تحليل الصورة. الرجاء المحاولة مرة أخرى.";
-                        analysisOutput.classList.remove('hidden');
-                    } finally {
-                        imageLoader.classList.add('hidden');
-                        analyzeImageBtn.classList.remove('hidden');
-                    }
-                };
-                reader.readAsDataURL(file);
-            });
-
-            const marketingInput = document.getElementById('marketing-input');
-            const contentType = document.getElementById('content-type');
-            const generateMarketingBtn = document.getElementById('generate-marketing-btn');
-            const marketingLoader = document.getElementById('marketing-loader');
-            const marketingOutput = document.getElementById('marketing-output');
-
-            generateMarketingBtn.addEventListener('click', async () => {
-                const description = marketingInput.value.trim();
-                const type = contentType.value;
-                if (!description) {
-                    marketingOutput.innerText = "الرجاء كتابة وصف للخدمة.";
-                    marketingOutput.classList.remove('hidden');
-                    return;
-                }
-
-                generateMarketingBtn.classList.add('hidden');
-                marketingLoader.classList.remove('hidden');
-                marketingOutput.classList.add('hidden');
-
-                let prompt = "";
-                switch (type) {
-                    case 'شعار':
-                        prompt = `اكتب شعار تسويقي جذاب ومبتكر باللغة العربية بناءً على الوصف التالي: "${description}"`;
-                        break;
-                    case 'منشور لوسائل التواصل الاجتماعي':
-                        prompt = `اكتب منشوراً تسويقياً باللغة العربية لوسائل التواصل الاجتماعي (تويتر وفيسبوك) عن الخدمة التالية: "${description}". اجعل النص موجزًا ومباشرًا.`;
-                        break;
-                    case 'مسودة بريد إلكتروني':
-                        prompt = `اكتب مسودة بريد إلكتروني تسويقي باللغة العربية للترويج للخدمة التالية: "${description}". يجب أن يكون البريد احترافيًا، يركز على الفوائد، ويدعو العميل المحتمل لاتخاذ إجراء.`;
-                        break;
-                }
-                
-                const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=';
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                    });
-                    
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    
-                    const result = await response.json();
-                    const marketingText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "تعذر توليد المحتوى.";
-                    
-                    marketingOutput.innerHTML = `<h4 class="text-xl font-bold mb-2">المحتوى التسويقي المقترح:</h4><p class="text-gray-700 whitespace-pre-wrap">${marketingText}</p>`;
-                    marketingOutput.classList.remove('hidden');
-
-                } catch (error) {
-                    console.error('Error generating marketing content:', error);
-                    marketingOutput.innerText = "حدث خطأ أثناء توليد المحتوى. الرجاء المحاولة مرة أخرى.";
-                    marketingOutput.classList.remove('hidden');
-                } finally {
-                    marketingLoader.classList.add('hidden');
-                    generateMarketingBtn.classList.remove('hidden');
-                }
-            });
-        });
-    </script>
-</body>
-</html><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ريادة الأمن الذكي والتقنيات المتقدمة | مؤسسة بلاي فيلم للتجارة</title>
