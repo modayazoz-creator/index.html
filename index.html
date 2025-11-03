@@ -9,14 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Cool Neutrals with a Tech Blue Accent -->
-    <!-- Application Structure Plan: تم تصميم التطبيق كهيكل لوحة معلومات تفاعلية بدلاً من تقرير خطي. يبدأ بمقدمة قوية، تليها لوحة تحكم للحلول تسمح للمستخدم بالنقر على فئات الخدمات لاستكشاف التفاصيل ديناميكيًا. يتبع ذلك قسم مرئي لقطاعات العملاء ومخطط تفاعلي يعرض محفظة الحلول. تم اختيار هذا الهيكل لتمكين الاستكشاف غير الخطي وتشجيع تفاعل المستخدم، مما يجعل المعلومات المعقدة أكثر قابلية للفهم والاستيعاب مقارنة بالتمرير عبر مستند طويل. -->
-    <!-- Visualization & Content Choices: 
-    - Report Info: قائمة الخدمات والفوائد. Goal: تنظيم وإعلام. Viz/Method: لوحة تحكم تفاعلية مع بطاقات قابلة للنقر. Interaction: النقر على بطاقة يعرض تفاصيل الخدمة في منطقة محتوى مخصصة. Justification: يوفر وصولاً سريعًا ومركّزًا للمعلومات التي تهم المستخدم. Library: Vanilla JS.
-    - Report Info: جدول "محفظة الحلول الشاملة". Goal: مقارنة. Viz/Method: مخطط شريطي أفقي تفاعلي. Interaction: النقر على شريط في المخطط يعرض الحلول والميزات الرئيسية المرتبطة به. Justification: يحول الجدول الثابت إلى أداة استكشاف مرئية وجذابة. Library: Chart.js (Canvas).
-    - Report Info: القيم الأساسية (الجودة، الخبرة). Goal: إعلام. Viz/Method: أيقونات بسيطة مع نص موجز في تخطيط شبكي. Interaction: لا يوجد تفاعل، التركيز على الوضوح. Justification: يعزز الرسائل الرئيسية للعلامة التجارية بشكل مرئي وموجز. Library: HTML/CSS.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
@@ -41,8 +33,9 @@
         .nav-link {
             transition: all 0.3s ease;
         }
-        .nav-link.active {
-            color: #2563eb;
+        /* اللون الأساسي الأزرق: #2563eb. لتغيير اللون الأساسي، غيّر الكود التالي: */
+        .nav-link.active { 
+            color: #2563eb; 
             border-bottom-color: #2563eb;
         }
         .solution-card {
@@ -91,7 +84,10 @@
 
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold text-blue-600">مؤسسة بلاي فيلم للتجارة</h1>
+            <a href="#hero" class="flex items-center space-x-2 space-x-reverse">
+                <img src="logo/playfilm_logo.png" alt="شعار مؤسسة بلاي فيلم للتجارة" class="h-8 md:h-10">
+                <h1 class="text-xl md:text-2xl font-bold text-blue-600">مؤسسة بلاي فيلم للتجارة</h1>
+            </a>
             <div class="hidden md:flex space-i-8">
                 <a href="#hero" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">الرئيسية</a>
                 <a href="#solutions" class="nav-link text-gray-600 hover:text-blue-600 border-b-2 border-transparent pb-1">حلولنا</a>
@@ -154,36 +150,36 @@
         <section id="visuals" class="py-16 bg-gray-100">
             <div class="text-center mb-12">
                 <h3 class="text-2xl md:text-4xl font-bold text-gray-900">حلولنا بالصور والفيديو</h3>
-                <p class="text-md text-gray-600 mt-2">لمحة مرئية عن الخدمات التي نقدمها.</p>
+                <p class="text-md text-gray-600 mt-2">لمحة مرئية عن الخدمات التي نقدمها. (الرجاء تغيير مسارات الصور في الكود أدناه)</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=نظام+مراقبة+ذكية" alt="Smart Monitoring System" title="أنظمة المراقبة المتقدمة المدعومة بالذكاء الاصطناعي" class="rounded-lg shadow-md mb-4 w-full h-auto">
+                    <img src="images/smart_monitoring.jpg" alt="Smart Monitoring System" title="أنظمة المراقبة المتقدمة المدعومة بالذكاء الاصطناعي" class="rounded-lg shadow-md mb-4 w-full h-auto">
                     <h4 class="text-xl font-bold my-2 text-blue-700">المراقبة المتقدمة</h4>
                     <p class="text-gray-600">نقدم حلول مراقبة شاملة باستخدام أحدث التقنيات مثل كاميرات 4K/8K وتحليلات الفيديو المدعومة بالذكاء الاصطناعي.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=التحكم+بالدخول" alt="Access Control System" title="أنظمة التحكم الذكي بالدخول وإدارة الوقت" class="rounded-lg shadow-md mb-4 w-full h-auto">
+                    <img src="images/access_control.jpg" alt="Access Control System" title="أنظمة التحكم الذكي بالدخول وإدارة الوقت" class="rounded-lg shadow-md mb-4 w-full h-auto">
                     <h4 class="text-xl font-bold my-2 text-blue-700">التحكم بالوصول</h4>
                     <p class="text-gray-600">تأمين المداخل والمخارج عبر أنظمة بيومترية، قارئات البطاقات، وبوابات إلكترونية لضمان التحكم الكامل في الدخول.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=حلول+الاتصالات" alt="Communication Solutions" title="حلول الاتصالات الحديثة والصوتيات الاحترافية" class="rounded-lg shadow-md mb-4 w-full h-auto">
+                    <img src="images/communication_solution.jpg" alt="Communication Solutions" title="حلول الاتصالات الحديثة والصوتيات الاحترافية" class="rounded-lg shadow-md mb-4 w-full h-auto">
                     <h4 class="text-xl font-bold my-2 text-blue-700">الاتصالات والصوتيات</h4>
                     <p class="text-gray-600">نوفر أنظمة سنترال VoIP وأنظمة صوت عالية الجودة للمساجد، قاعات الاجتماعات، والمرافق العامة.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=المباني+الذكية" alt="Smart Building Tech" title="تقنيات المباني والبنية التحتية الذكية" class="rounded-lg shadow-md mb-4 w-full h-auto">
+                    <img src="images/smart_building.jpg" alt="Smart Building Tech" title="تقنيات المباني والبنية التحتية الذكية" class="rounded-lg shadow-md mb-4 w-full h-auto">
                     <h4 class="text-xl font-bold my-2 text-blue-700">المباني الذكية</h4>
                     <p class="text-gray-600">نحول المباني إلى مساحات ذكية عبر أنظمة تحكم متكاملة بالإضاءة، التكييف، والأجهزة لتوفير الطاقة والراحة.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=حلول+الطاقة+المتجددة" alt="Renewable Energy" title="حلول الطاقة المتجددة والمتخصصة" class="rounded-lg shadow-md mb-4 w-full h-auto">
+                    <img src="images/renewable_energy.jpg" alt="Renewable Energy" title="حلول الطاقة المتجددة والمتخصصة" class="rounded-lg shadow-md mb-4 w-full h-auto">
                     <h4 class="text-xl font-bold my-2 text-blue-700">حلول الطاقة</h4>
                     <p class="text-gray-600">تماشيًا مع رؤية 2030، نقدم ألواح طاقة شمسية ومولدات طاقة لضمان استمرارية التشغيل وتقليل التكاليف.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <img src="https://placehold.co/600x400/2563EB/ffffff?text=فيديو+توضيحي" alt="Service Explanation Video" title="فيديو تعريفي بخدماتنا المتكاملة" class="rounded-lg shadow-md mb-4 w-full h-auto">
+                    <img src="images/intro_video_cover.jpg" alt="Service Explanation Video" title="فيديو تعريفي بخدماتنا المتكاملة" class="rounded-lg shadow-md mb-4 w-full h-auto">
                     <h4 class="text-xl font-bold my-2 text-blue-700">فيديو تعريفي</h4>
                     <p class="text-gray-600">نقدم عرضًا مرئيًا تفاعليًا يوضح كيف تعمل حلولنا معًا لإنشاء بيئة آمنة وذكية. </p>
                 </div>
